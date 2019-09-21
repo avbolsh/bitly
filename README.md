@@ -14,7 +14,7 @@ Python3 should be already installed
 Then use 'pip' to install dependencies:
 
 ```
-pip install -r requpip install -r requirements.txt
+pip install -r requirements.txt
 ```
 ### Project Goals
 
