@@ -2,7 +2,7 @@
 
 [This script allow create short url and count clicks on bitly-links. Script uses service https://bitly.com/]
 
-### How does it work
+### How it works
 If you'll input a not-bitly-url script puts bitly-link in stdout.
 If you'll input a bitly-link script counts how many times it was clicked.
 
