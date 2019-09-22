@@ -41,7 +41,11 @@ Also you can put your bitly-link, ad script says how many times someone clicks o
 python bitly.py bit.ly/3541ways
 ``
 
+<<<<<<< HEAD
 And script prints ...
+=======
+Add script prints ...
+>>>>>>> 4e192d07202427e539b6937b954da2e0ea70b3f8
 
 ``
 163
