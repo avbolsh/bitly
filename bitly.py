@@ -4,15 +4,6 @@ import os
 import argparse
 from dotenv import load_dotenv
 
-load_dotenv()
-USER_TOKEN = os.getenv("BITLY_TOKEN")
-
-parser = argparse.ArgumentParser(description="Create short link or count\
-                                clicks for short link")
-parser.add_argument("url", help="URL for bitly-link or your bitly-link", 
-                    type=str)
-arguments = parser.parse_args()
-
 
 def get_user_info(token):
     url = "https://api-ssl.bitly.com/v4/user"
@@ -20,6 +11,10 @@ def get_user_info(token):
     response = requests.get(url, headers=headers)
     return response.json()["id"]
     
+#Добрый день. shorten - это как раз и есть глагол
+#вот пруф bit.ly/350HxtY
+#Согласен, что get_short_link вроде как понятнее, но зато
+#shorten_link короче. Просто чтобы не попасть еще на одну итерацию проверки из-за названия
 
 def shorten_link(long_url, token):
     headers = {"Authorization": token}
@@ -36,9 +31,21 @@ def count_clicks(bitlink, token):
     response = requests.get(url, headers=headers)
     response.raise_for_status()
     return response.json()["total_clicks"]
-   
+
+
+def set_script_arguments():
+    parser = argparse.ArgumentParser(description="Create short link or count\
+                                clicks for short link")
+    parser.add_argument("url", help="URL for bitly-link or your bitly-link", 
+                        type=str)
+    return parser.parse_args()
+
 
 if __name__ == '__main__':
+    arguments = set_script_arguments()
+    load_dotenv()
+    USER_TOKEN = os.getenv("BITLY_TOKEN")
+    
     input_URL = arguments.url 
     if (input_URL.startswith("bit.ly")):
         try:
