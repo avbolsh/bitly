@@ -11,10 +11,6 @@ def get_user_info(token):
     response = requests.get(url, headers=headers)
     return response.json()["id"]
     
-#Добрый день. shorten - это как раз и есть глагол
-#вот пруф bit.ly/350HxtY
-#Согласен, что get_short_link вроде как понятнее, но зато
-#shorten_link короче. Просто чтобы не попасть еще на одну итерацию проверки из-за названия
 
 def shorten_link(long_url, token):
     headers = {"Authorization": token}
