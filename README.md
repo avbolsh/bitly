@@ -1,6 +1,6 @@
 # Bitly url shorterer
 
-[This script allow create short url and count clicks on bitly-links. Script uses service https://bitly.com/]
+[This script allows create short url and count clicks on bitly-links. Script uses service https://bitly.com/]
 
 ### How it works
 If you'll input a not-bitly-url script puts bitly-link in stdout.
